@@ -29,8 +29,8 @@ jobs:
                   for d in range(3):
                       t = r["daily"]["temperature_2m_max"][d]
                       w = r["daily"]["windspeed_10m_max"][d] * 0.539957
-                      s = 2 if w > 7 else (5 if w > 5 else 9)
-                      rat = "🔴 REGULAR" if w > 7 else ("🟡 BUENO" if w > 5 else "🟢 EXCELENTE")
+                      s = 2 if w > 6 else (5 if w > 5 else 9)
+                      rat = "🔴 REGULAR" if w > 4 else ("🟡 BUENO" if w > 2 else "🟢 EXCELENTE")
                       dias[d].append({"nombre": nombre, "temp": t, "viento": w, "score": s, "rating": rat})
               except:
                   pass
